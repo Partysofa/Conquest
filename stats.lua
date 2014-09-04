@@ -1,0 +1,35 @@
+require "population"
+require "resources"
+require "LoveFrames"
+
+local stats = loveframes.Create("frame")
+stats:SetName("Statistics")
+stats:SetSize(400, 250)
+stats:SetDockable(true)
+stats:SetAlwaysUpdate(true)
+
+local list = loveframes.Create("columnlist", stats)
+list:SetPos(5, 30)
+list:SetSize(390, 215)
+list:AddColumn("Statistic")
+list:AddColumn("Value")
+
+list:AddRow("Population ", "" ..peasants.. " / ".. maxPeasants)
+list:AddRow("Without a job ", "" ..noJob.. "")
+list:AddRow("Farmers ", "" ..farmers.. "")
+list:AddRow("Woodcutters ", "" ..woodcutters.. "")
+list:AddRow("Miners ", "" ..miners.. "")
+list:AddRow("Dead ", "" ..dead.. "")
+list:AddRow("Graveyards", "" .. graveyard)
+list:AddRow("Available graves ", "" ..emptyGraves.. "")
+list:AddRow("Tax ", "" ..tax.. "%")
+list:AddRow("Land Size ", "" ..landUsed.. " / " ..landAvailable)
+list:AddRow("Resource Clicks ", "" ..resClick)
+list:AddRow("Houses", "" .. houses)
+list:AddRow("Mills", "" .. mill)
+list:AddRow("Smithys", "" .. smithy)
+list:AddRow("Temples", "" .. temple)
+list:AddRow("Tanneries", "" .. tannery)
+list:AddRow("Slaughterhouses", "" .. butcher)
+list:AddRow("Bakeries", "" .. bakery)
+list:AddRow("Breweries", "" .. brewery)
